@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setup(
     name='imcsv',
     packages=find_packages(include=['imcsv']),
-    version='0.1.0',
+    version='0.0.1',
     description='In-Memory CSV file creator',
     author='Kwabena Asante',
     long_description=long_description,
