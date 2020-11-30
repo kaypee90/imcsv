@@ -14,8 +14,6 @@ Installation
 
 Install using pip:
 
-.. code-block:: sh
-
     pip install imcsv
 
 Usage
@@ -23,7 +21,6 @@ Usage
 
 Provides you with an in-memory csv file
 
-.. code-block:: python
 
     from imcsv.imcsv import generate_temp_csvfile
 

@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name='imcsv-pkg-kaypee90',
+    name='imcsv',
     packages=find_packages(include=['imcsv']),
     version='0.1.0',
     description='In-Memory CSV file creator',
