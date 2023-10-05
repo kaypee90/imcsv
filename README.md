@@ -1,7 +1,7 @@
 imcsv - Fast Python In-Memory CSV file creator!
 ---------------------------------------------------------
 
-An in-memory CSV generator. The library is built to enhance test cases that require csv files.
+An in-memory CSV generator. The library is built to make it easy to test scenarios in your application that require csv files.
 
 Requirements
 ------------
