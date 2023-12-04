@@ -1,8 +1,7 @@
-import io
 import csv
 import unittest
+from imcsv.exceptions import EmptyHeadersError, InconsistentCsvDataError
 from imcsv.imcsv import generate_temp_csvfile
-from imcsv.exceptions import InconsistentCsvDataError, EmptyHeadersError
 
 
 class TestImcsvCreator(unittest.TestCase):
@@ -54,14 +53,8 @@ class TestImcsvCreator(unittest.TestCase):
             _ = generate_temp_csvfile(headers, rows)
 
     def test_generate_temp_csvfile_with_empty_headers(self):
-        headers = None
-        rows = [
-            [
-                "5-June-2020",
-                "5",
-                "2020",
-            ],
-        ]
+        headers = []
+        rows = [[]]
 
         with self.assertRaises(EmptyHeadersError):
             _ = generate_temp_csvfile(headers, rows)
