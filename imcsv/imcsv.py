@@ -1,10 +1,11 @@
 import csv
 import tempfile
+
 from imcsv.exceptions import (
     EmptyHeadersError,
-    NullCsvFileError,
-    NullCsvFileError,
     InconsistentCsvDataError,
+    NullCsvDataError,
+    NullCsvFileError,
 )
 
 
@@ -25,8 +26,8 @@ def _generate_csv_data(headers: list, data: list):
     if not headers:
         raise EmptyHeadersError
 
-    if not data:
-        raise EmptyCsvDataError
+    if data is None:
+        raise NullCsvDataError
 
     for row_record in data:
         if len(headers) != len(row_record):

@@ -1,4 +1,9 @@
 # define Python user-defined exceptions
+"""
+Package exception definitions
+"""
+
+
 class Error(Exception):
     """Base class for other exceptions"""
 
@@ -6,16 +11,16 @@ class Error(Exception):
 
 
 class EmptyHeadersError(Error):
-    """ Raised when no headers are provided """
+    """Raised when no headers are provided"""
 
     pass
 
 
-class EmptyCsvDataError(Error):
+class NullCsvDataError(Error):
     """
     Raised when trying to perform operation
-    that requires CSV data but a null or empty
-    data is provided
+    that requires CSV data of a list type
+    but null is provided
     """
 
     pass
@@ -35,9 +40,9 @@ class InconsistentCsvDataError(Error):
     the length of the headers list provided
     """
 
-    def __init__(self, headers, row_record):
+    def __init__(self, headers, row_record) -> None:
         self.message = f"Expected a list with {len(headers)} items as header but got {len(row_record)}"
         super().__init__(self.message)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.message
